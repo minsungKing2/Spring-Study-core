@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OrderServiceImpl implements OrderService{
-
-//    private final MemberRepository memberRepository = new MemoryMemberRepository(); //멤버 받아오기
+    //    private final MemberRepository memberRepository = new MemoryMemberRepository(); //멤버 받아오기
     //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy(); //할인율 고정 할인
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy(); //할인율 차등 할인(변경 용이 but, OCP 위반! 및 DIP 위반)
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy; //DIP 위반X 위해 변경
 
-    @Autowired
+
+    @Autowired //의존관계를 주입해줌.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
