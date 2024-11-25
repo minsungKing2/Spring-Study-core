@@ -49,7 +49,8 @@ public class AppConfig { //IoC 컨테이너, DI 컨테이너 의존관계 주입
     @Bean
     public OrderService orderService() {
         System.out.println("call AppConfig.orderService");
-        return new OrderServiceImpl(memberRepository(), discountPolicy());
+//        return new OrderServiceImpl(memberRepository(), discountPolicy());
+        return null;
     }
 
     @Bean
